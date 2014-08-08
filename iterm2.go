@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+var version string
 var colorCommands = []cli.Command{
 	tabColor("maroon", 128, 0, 0),
 	tabColor("dark-red", 139, 0, 0),
@@ -155,6 +156,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "iterm2"
 	app.Usage = "control iTerm2 from cli"
+  app.Version = version
 	app.Commands = []cli.Command{
 		{
 			Name:  "tab",
