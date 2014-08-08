@@ -5,7 +5,12 @@
 
 ## Installation
 
-TODO
+Install via Homebrew
+
+```
+brew tap suin/suin
+brew install iterm2-cli
+```
 
 ## Usage
 
@@ -25,5 +30,5 @@ $ iterm2 tab color light-blue
 Run `tab title $title` to change tab title.
 
 ```console
-$ iterm2 tab name my project
+$ iterm2 tab title my project
 ```
