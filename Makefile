@@ -13,3 +13,4 @@ release:
 	git add bin
 	git commit -m "release $(version)"
 	git tag $(version)
+	git push --tags
