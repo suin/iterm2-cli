@@ -161,13 +161,15 @@ func main() {
 			Usage: "Control tabs",
 			Subcommands: []cli.Command{
 				{
-					Name:        "color, colour",
+					Name:        "color",
+					ShortName:   "colour",
 					Usage:       "Change tab color",
 					Subcommands: colorCommands,
 				},
 				{
-					Name:  "title, name",
-					Usage: "Change tab title",
+					Name:      "title",
+					ShortName: "name",
+					Usage:     "Change tab title",
 					Action: func(c *cli.Context) {
 						if len(c.Args()) > 0 {
 							tabTitle(strings.Join(c.Args(), " "))
