@@ -1,0 +1,8 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker run -i -v `pwd`:/ci -w /ci shouldbee/go gox -os darwin -output "iterm2-{{.OS}}-{{.Arch}}"
+    - mv ./iterm2-* $CIRCLE_ARTIFACTS/
