@@ -4,6 +4,6 @@ machine:
 
 dependencies:
   override:
-    - docker run -i -v `pwd`:/ci -w /ci -v $HOME/go:$HOME/go -e GOPATH=$HOME/go shouldbee/go go get ./...
-    - docker run -i -v `pwd`:/ci -w /ci -v $HOME/go:$HOME/go -e GOPATH=$HOME/go shouldbee/go gox -os darwin -output "iterm2-{{.OS}}-{{.Arch}}"
+    - docker run -i -v `pwd`:/ci -w /ci -e GOPATH=/ci -e GOBIN=/ci/bin shouldbee/go go get ./...
+    - docker run -i -v `pwd`:/ci -w /ci -e GOPATH=/ci -e GOBIN=/ci/bin shouldbee/go gox -os darwin -output "iterm2-{{.OS}}-{{.Arch}}"
     - mv ./iterm2-* $CIRCLE_ARTIFACTS/
